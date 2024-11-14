@@ -4,6 +4,10 @@
     
   </head>
   <body>
+    <h4>Daraz Full App Login And Signup User Link</h4>
+    <p>
+     https://imran-daraz-app.netlify.app
+    </p>
     <h4>Tic Tac Toe Game Link</h4>
     <p>
      https://imran-tic-tac-toe.netlify.app
