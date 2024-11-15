@@ -12,29 +12,33 @@ var HomeSliderImg = [
 ];
 
 function CreatsHomeSLider() {
-  var homeSliderContainer = document.querySelector(".home_slider");
-  var swiper_wrapper = document.createElement("div");
-  swiper_wrapper.className = "swiper-wrapper";
-  homeSliderContainer.appendChild(swiper_wrapper);
-  homeSliderContainer.appendChild(swiper_wrapper);
-  for (var i = 0; i < HomeSliderImg.length; i++) {
-    var swiper_slide = document.createElement("div");
-    swiper_slide.className = "swiper-slide";
-    swiper_slide.classList.add("img-set");
-    var img = document.createElement("img");
-    img.src = HomeSliderImg[i];
-    swiper_slide.appendChild(img);
-    swiper_wrapper.appendChild(swiper_slide);
+  try {
+    var homeSliderContainer = document.querySelector(".home_slider");
+    var swiper_wrapper = document.createElement("div");
+    swiper_wrapper.className = "swiper-wrapper";
+    homeSliderContainer.appendChild(swiper_wrapper);
+    homeSliderContainer.appendChild(swiper_wrapper);
+    for (var i = 0; i < HomeSliderImg.length; i++) {
+      var swiper_slide = document.createElement("div");
+      swiper_slide.className = "swiper-slide";
+      swiper_slide.classList.add("img-set");
+      var img = document.createElement("img");
+      img.src = HomeSliderImg[i];
+      swiper_slide.appendChild(img);
+      swiper_wrapper.appendChild(swiper_slide);
+    }
+    var swipper_button_next = document.createElement("div");
+    homeSliderContainer.appendChild(swipper_button_next);
+    swipper_button_next.className = "swiper-button-next";
+    var swipper_button_prev = document.createElement("div");
+    homeSliderContainer.appendChild(swipper_button_prev);
+    swipper_button_prev.className = "swiper-button-prev";
+    var swipper_pagination = document.createElement("div");
+    homeSliderContainer.appendChild(swipper_pagination);
+    swipper_pagination.className = "swiper-pagination";
+  } catch (error) {
+    console.log("Error", error.message);
   }
-  var swipper_button_next = document.createElement("div");
-  homeSliderContainer.appendChild(swipper_button_next);
-  swipper_button_next.className = "swiper-button-next";
-  var swipper_button_prev = document.createElement("div");
-  homeSliderContainer.appendChild(swipper_button_prev);
-  swipper_button_prev.className = "swiper-button-prev";
-  var swipper_pagination = document.createElement("div");
-  homeSliderContainer.appendChild(swipper_pagination);
-  swipper_pagination.className = "swiper-pagination";
 }
 
 CreatsHomeSLider();
@@ -42,6 +46,7 @@ CreatsHomeSLider();
 var products1 = [
   {
     id: 1,
+    title: "Dawlance Air Conditioner Mega",
     pera: "Dawlance Air Conditioner Mega T+ 10 DC Inverter 0.75 Ton / Split AC / Cool Only / 8000 BTU",
     image:
       "https://img.drz.lazcdn.com/static/pk/p/58a3ce1524bcec9c89b69d4c60135bdb.jpg_400x400q80.jpg_.webp",
@@ -50,6 +55,7 @@ var products1 = [
   },
   {
     id: 2,
+    title: "GLUPATONE Extreme Strong Emulsion",
     pera: "GLUPATONE Extreme Strong Emulsion 50ml With Homeo Cure Beauty Cream (Pack Of 2)",
     image:
       "https://img.drz.lazcdn.com/static/pk/p/6784c2fd2071c82c038d9ad3bae57149.jpg_400x400q80.jpg_.webp",
@@ -58,6 +64,7 @@ var products1 = [
   },
   {
     id: 3,
+    title: "Pack of 8 Knorr Noodles",
     pera: "Pack of 8 Knorr Noodles Chatpatta - 50G",
     image:
       "https://img.drz.lazcdn.com/static/pk/p/7f4555eb13db505c4c045ad5a20314b5.jpg_400x400q80.jpg_.webp",
@@ -66,6 +73,7 @@ var products1 = [
   },
   {
     id: 4,
+    title: "Habitt - Mack King Size",
     pera: "Habitt - Mack King Size Floor Bed",
     image:
       "https://img.drz.lazcdn.com/static/pk/p/6f1e989717769e71aa4cd8f3f7b4a526.jpg_400x400q80.jpg_.webp",
@@ -74,6 +82,7 @@ var products1 = [
   },
   {
     id: 5,
+    title: "KalaKola Hairwell Shampoo Hair Color ",
     pera: "KalaKola Hairwell Shampoo Hair Color (Dark Brown) Sachet Box",
     image:
       "https://img.drz.lazcdn.com/g/kf/S2f3bea7447c54f53bf253a6f039e62d8w.png_400x400q80.png_.webp",
@@ -82,6 +91,7 @@ var products1 = [
   },
   {
     id: 6,
+    title: "FORT 5 IN 1 Whitening Face wash | Glow-Enhancing",
     pera: "FORT 5 IN 1 Whitening Face wash | Glow-Enhancing Cleanser for Radiant Skin Reduce Wrinkles & Circle and Brightening Face Wash",
     image:
       "https://img.drz.lazcdn.com/static/pk/p/f2f698f03eba11cb3bbbfd7c54ac33af.jpg_400x400q80.jpg_.webp",
@@ -91,33 +101,125 @@ var products1 = [
 ];
 
 var productCountainers = document.querySelector("#flash .container-fluid .row");
-console.log(productCountainers);
+
 function CreateProductCards() {
-  for (var i = 0; i < products1.length; i++) {
-    var product_col = document.createElement("div");
-    product_col.className = "col-lg-2 col-md-3 col-sm-4 box-product";
-    product_col.innerHTML = `
+  try {
+    for (var i = 0; i < products1.length; i++) {
+      var product_col = document.createElement("div");
+      product_col.setAttribute(
+        "onclick",
+        `ShowViewProduct(${products1[i].id})`
+      );
+      product_col.className = "col-lg-2 col-md-3 col-sm-4 box-product";
+      product_col.innerHTML = `
     <div class="card-content">
     <div class="img" style="width: 100%; height: 180px;">
         <img src="${products1[i].image}"
             alt="" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
     <div class="cart-information">
-        <div class="description mt-3">${products1[i].pera
-          .toString()
-          .slice(0, 50)}...</div>
+        <div class="description mt-3 line-desc">${products1[i].pera}...</div>
         <div class="price mt-1">${products1[i].price}</div>
         <div class="cut-price">
         ${products1[i].discountPrice}
         </div>
     </div>
 </div>`;
-    productCountainers.appendChild(product_col);
+      productCountainers.appendChild(product_col);
+    }
+  } catch (error) {
+    console.log("Error", error.message);
   }
 }
 
 CreateProductCards();
+function ShowViewProduct(ProductId) {
+  console.log(ProductId);
+  var ViewData = products1.filter((data) => data.id === ProductId);
+  localStorage.setItem("product1", JSON.stringify(ViewData));
+  window.location.href = "./ProductView.html";
+}
+var Counter = 0;
+function CounterPlus() {
+  Counter++;
+  document.querySelector(".cart-number").innerHTML = Counter;
+}
+function Counterminus() {
+  Counter--;
+  document.querySelector(".cart-number").innerHTML = Counter;
+  if (Counter < 0) {
+    Counter = 0;
+    document.querySelector(".cart-number").innerHTML = Counter;
+  }
+}
 
+var product_container = document.getElementById("product_container");
+function GetSingleProduct() {
+  try {
+    var Data = JSON.parse(localStorage.getItem("product1"));
+    console.log(Data[0].image);
+    var Leftdiv = document.createElement("div");
+    Leftdiv.classList.add("left-imgs", "col-lg-6", "col-md-12");
+    Leftdiv.innerHTML = `
+   <div class="left-imgs">
+    <img class="main-img" alt="product image" src="${Data[0].image}" />
+    </div>
+  `;
+    var rightdiv = document.createElement("div");
+    rightdiv.classList.add("right-text", "col-lg-6", "col-md-12");
+    rightdiv.innerHTML = `
+                  <div class="right-text">
+                    <span class="heading-secondary">Daraz Company</span>
+                    <h1 class="heading-primary">${
+                      Data[0].title ? Data[0].title : "Not Title Here...."
+                    }</h1>
+                    <p class="description">
+                      ${Data[0].pera}
+                    </p>
+
+                    <h2 class="price-discount">${Data[0].discountPrice}</h2>
+
+                    <p class="price-original">${Data[0].price}</p>
+                    <div class="buttons">
+                        <div class="btn-left">
+                            <button class="minus" onclick="Counterminus()">
+                                <svg width="12" height="4" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <path
+                                            d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
+                                            id="a" />
+                                    </defs>
+                                    <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
+                                </svg>
+                            </button>
+                            <span class="cart-number">${Counter}</span>
+                            <button class="plus" onclick="CounterPlus()">
+                                <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <path
+                                            d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
+                                            id="b" />
+                                    </defs>
+                                    <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="btn-right">
+                            <ion-icon name="cart-outline"></ion-icon>
+                            <button class="add-cart">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+  `;
+    product_container.appendChild(Leftdiv);
+    product_container.appendChild(rightdiv);
+  } catch (error) {
+    console.log("Error", error.message);
+  }
+}
+GetSingleProduct();
 var categories = [
   {
     imageUrl:
@@ -202,29 +304,33 @@ var categories = [
 ];
 var catParent = document.getElementById("cat-row");
 function CategoryShow() {
-  for (var i = 0; i < categories.length; i++) {
-    var col = document.createElement("div");
-    col.setAttribute(
-      "class",
-      "d-flex flex-column justify-content-center align-items-center border py-2 px-1 cards-col"
-    );
-    var image_div = document.createElement("div");
-    image_div.setAttribute("class", "image-div");
-    var img = document.createElement("img");
-    img.style.width = "100%";
-    img.style.height = "100%";
-    img.style.borderRadius = "5px";
-    img.style.objectFit = "cover";
-    img.setAttribute("src", categories[i].imageUrl);
-    image_div.appendChild(img);
-    var title_div = document.createElement("div");
-    var titleText = document.createTextNode(categories[i].title);
-    title_div.appendChild(titleText);
-    title_div.setAttribute("class", "fw-normal mt-2");
-    title_div.style.fontSize = "12px";
-    col.appendChild(image_div);
-    col.appendChild(title_div);
-    catParent.appendChild(col);
+  try {
+    for (var i = 0; i < categories.length; i++) {
+      var col = document.createElement("div");
+      col.setAttribute(
+        "class",
+        "d-flex flex-column justify-content-center align-items-center border py-2 px-1 cards-col"
+      );
+      var image_div = document.createElement("div");
+      image_div.setAttribute("class", "image-div");
+      var img = document.createElement("img");
+      img.style.width = "100%";
+      img.style.height = "100%";
+      img.style.borderRadius = "5px";
+      img.style.objectFit = "cover";
+      img.setAttribute("src", categories[i].imageUrl);
+      image_div.appendChild(img);
+      var title_div = document.createElement("div");
+      var titleText = document.createTextNode(categories[i].title);
+      title_div.appendChild(titleText);
+      title_div.setAttribute("class", "fw-normal mt-2");
+      title_div.style.fontSize = "12px";
+      col.appendChild(image_div);
+      col.appendChild(title_div);
+      catParent.appendChild(col);
+    }
+  } catch (error) {
+    console.log("error", error.message);
   }
 }
 
@@ -475,11 +581,12 @@ var StartIndex = 0;
 var minimumIndex = 6;
 var button = document.getElementById("load-more");
 function ProducrShowHomePage() {
-  var CardToShow = product.slice(StartIndex, StartIndex + minimumIndex);
-  CardToShow.forEach((data) => {
-    var product_col = document.createElement("div");
-    product_col.className = "col-lg-2 col-md-3 col-sm-4 p-1";
-    product_col.innerHTML = `
+  try {
+    var CardToShow = product.slice(StartIndex, StartIndex + minimumIndex);
+    CardToShow.forEach((data) => {
+      var product_col = document.createElement("div");
+      product_col.className = "col-lg-2 col-md-3 col-sm-4 p-1";
+      product_col.innerHTML = `
     <div class="card-content2 border rounded-1">
     <div class="img" style="width: 100%; height: 180px;">
         <img src="${data.image}"
@@ -502,70 +609,89 @@ function ProducrShowHomePage() {
         </div>
     </div>
 </div>`;
-    productmain.appendChild(product_col);
-  });
-  //   for (var i = 0; i < CardToShow.length; i++) {
-  //     var product_col = document.createElement("div");
-  //     product_col.className = "col-lg-2 col-md-3 col-sm-4 p-1";
-  //     product_col.innerHTML = `
-  //     <div class="card-content2 border rounded-1">
-  //     <div class="img" style="width: 100%; height: 180px;">
-  //         <img src="${product[i].image}"
-  //             alt="" style="width: 100%; height: 100%; object-fit: cover;">
-  //     </div>
-  //     <div class="cart-information p-3">
-  //         <div class="description mt-3">${product[i].desc
-  //           .toString()
-  //           .slice(0, 40)}...</div>
-  //         <div class="price mt-1">${product[i].price}</div>
-  //         <div class="reviews">
-  //         <div class="stars">
-  //         <i class="fa-solid fa-star"></i>
-  //         <i class="fa-solid fa-star"></i>
-  //         <i class="fa-solid fa-star"></i>
-  //         <i class="fa-solid fa-star"></i>
-  //         <i class="fas fa-regular fa-star"></i>
-  //         </div>
-  //         <div class="review">${product[i].rating}</div>
-  //         </div>
-  //     </div>
-  // </div>`;
-  //     productmain.appendChild(product_col);
-  //   }
-  StartIndex += minimumIndex;
-  if (StartIndex > product.length) {
-    button.style.display = "none";
+      productmain.appendChild(product_col);
+    });
+    //   for (var i = 0; i < CardToShow.length; i++) {
+    //     var product_col = document.createElement("div");
+    //     product_col.className = "col-lg-2 col-md-3 col-sm-4 p-1";
+    //     product_col.innerHTML = `
+    //     <div class="card-content2 border rounded-1">
+    //     <div class="img" style="width: 100%; height: 180px;">
+    //         <img src="${product[i].image}"
+    //             alt="" style="width: 100%; height: 100%; object-fit: cover;">
+    //     </div>
+    //     <div class="cart-information p-3">
+    //         <div class="description mt-3">${product[i].desc
+    //           .toString()
+    //           .slice(0, 40)}...</div>
+    //         <div class="price mt-1">${product[i].price}</div>
+    //         <div class="reviews">
+    //         <div class="stars">
+    //         <i class="fa-solid fa-star"></i>
+    //         <i class="fa-solid fa-star"></i>
+    //         <i class="fa-solid fa-star"></i>
+    //         <i class="fa-solid fa-star"></i>
+    //         <i class="fas fa-regular fa-star"></i>
+    //         </div>
+    //         <div class="review">${product[i].rating}</div>
+    //         </div>
+    //     </div>
+    // </div>`;
+    //     productmain.appendChild(product_col);
+    //   }
+    StartIndex += minimumIndex;
+    if (StartIndex > product.length) {
+      button.style.display = "none";
+    }
+  } catch (error) {
+    console.log("Error", error.message);
   }
 }
 ProducrShowHomePage();
 
-button.addEventListener("click", function () {
-  button.innerHTML = `<div class="d-flex align-items-center">
+try {
+  button.addEventListener("click", function () {
+    button.innerHTML = `<div class="d-flex align-items-center">
   <strong role="status"></strong>
   <div class="spinner-border ms-auto" aria-hidden="true"></div>`;
-  setTimeout(() => {
-    ProducrShowHomePage(); // Call the function again after 3 seconds to load more products.
-    button.innerHTML = "Load More";
-  }, 3000);
-});
+    setTimeout(() => {
+      ProducrShowHomePage(); // Call the function again after 3 seconds to load more products.
+      button.innerHTML = "Load More";
+    }, 3000);
+  });
+} catch (error) {
+  console.log("Error", error.message);
+}
 
 function ShowCreaTAccount() {
-  document.getElementById("signup").classList.add("show");
-  document.getElementById("login-form").style.display = "none";
+  try {
+    document.getElementById("signup").classList.add("show");
+    document.getElementById("login-form").style.display = "none";
+  } catch (error) {
+    console.log("Error", error.message);
+  }
 }
 function ShowHaveAccount() {
-  document.getElementById("signup").classList.remove("show");
-  document.getElementById("login-form").style.display = "block";
+  try {
+    document.getElementById("signup").classList.remove("show");
+    document.getElementById("login-form").style.display = "block";
+  } catch (error) {
+    console.log("Error", error.message);
+  }
 }
 
 function showPassword() {
-  var x = document.querySelectorAll(".password_input");
-  for (var i = 0; i < x.length; i++) {
-    if (x[i].type === "password") {
-      x[i].type = "text";
-    } else {
-      x[i].type = "password";
+  try {
+    var x = document.querySelectorAll(".password_input");
+    for (var i = 0; i < x.length; i++) {
+      if (x[i].type === "password") {
+        x[i].type = "text";
+      } else {
+        x[i].type = "password";
+      }
     }
+  } catch (error) {
+    console.log("Error", error.message);
   }
 }
 
@@ -583,34 +709,49 @@ var loginUserEmail = document.getElementById("login-user-email");
 var loginPassword = document.getElementById("login-password");
 // console.log(loginPassword, loginUserEmail, "Login");
 function RegisterAndLogin() {
-  if (
-    userName.value === "" ||
-    email.value === "" ||
-    password.value === "" ||
-    confirmPassword.value === ""
-  ) {
+  try {
+    if (
+      userName.value === "" ||
+      email.value === "" ||
+      password.value === "" ||
+      confirmPassword.value === ""
+    ) {
+      Toastify({
+        text: "All Fields are Required !",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function () {}, // Callback after click
+      }).showToast();
+      return false;
+    }
+    name = userName.value;
+    email_val = email.value;
+    password_val = password.value;
+    confirmPassword_val = confirmPassword.value;
+    if (password.value !== confirmPassword.value) {
+      Toastify({
+        text: `Passwords do not match`,
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "center",
+        stopOnFocus: true,
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+      }).showToast();
+      return false;
+    }
     Toastify({
-      text: "All Fields are Required !",
-      duration: 3000,
-      newWindow: true,
-      close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "center", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
-      },
-      onClick: function () {}, // Callback after click
-    }).showToast();
-    return false;
-  }
-  name = userName.value;
-  email_val = email.value;
-  password_val = password.value;
-  confirmPassword_val = confirmPassword.value;
-  if (password.value !== confirmPassword.value) {
-    Toastify({
-      text: `Passwords do not match`,
+      text: `Register Successfully`,
       duration: 3000,
       newWindow: true,
       close: true,
@@ -621,89 +762,129 @@ function RegisterAndLogin() {
         background: "linear-gradient(to right, #00b09b, #96c93d)",
       },
     }).showToast();
-    return false;
+    ShowHaveAccount();
+  } catch (error) {
+    console.log("Error", error.message);
   }
-  Toastify({
-    text: `Register Successfully`,
-    duration: 3000,
-    newWindow: true,
-    close: true,
-    gravity: "top",
-    position: "center",
-    stopOnFocus: true,
-    style: {
-      background: "linear-gradient(to right, #00b09b, #96c93d)",
-    },
-  }).showToast();
-  ShowHaveAccount();
 }
 var showName = document.getElementById("name");
 function Login() {
-  if (loginUserEmail.value === "" || loginPassword.value === "") {
-    Toastify({
-      text: "All Fields are Required !",
-      duration: 3000,
-      newWindow: true,
-      close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "center", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
-      },
-      onClick: function () {}, // Callback after click
-    }).showToast();
-    return false;
-  }
-  if (
-    loginUserEmail.value === email_val &&
-    loginPassword.value === password_val
-  ) {
-    Toastify({
-      text: "Login Successfully !",
-      duration: 3000,
-      newWindow: true,
-      close: true,
-      gravity: "top",
-      position: "center",
-      stopOnFocus: true,
-      style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
-      },
-    }).showToast();
-    document.getElementById("loginandsignup").style.display = "none";
-    if (name) {
-      showName.innerHTML = `${name}`;
-    } else {
-      showName.innerHTML = "User";
+  try {
+    if (loginUserEmail.value === "" || loginPassword.value === "") {
+      Toastify({
+        text: "All Fields are Required !",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function () {}, // Callback after click
+      }).showToast();
+      return false;
     }
-  } else {
-    Toastify({
-      text: "Invalid Credentials",
-      duration: 3000,
-      newWindow: true,
-      close: true,
-      gravity: "top",
-      position: "center",
-      stopOnFocus: true,
-      style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
-      },
-    }).showToast();
-    return false;
+    if (
+      loginUserEmail.value === email_val &&
+      loginPassword.value === password_val
+    ) {
+      Toastify({
+        text: "Login Successfully !",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "center",
+        stopOnFocus: true,
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+      }).showToast();
+      document.getElementById("loginandsignup").style.display = "none";
+      if (name) {
+        showName.innerHTML = `${name}`;
+      } else {
+        showName.innerHTML = "User";
+      }
+    } else {
+      Toastify({
+        text: "Invalid Credentials",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "center",
+        stopOnFocus: true,
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+      }).showToast();
+      return false;
+    }
+    setTimeout(() => {
+      Toastify({
+        text: `Wellcome ${name}`,
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "center",
+        stopOnFocus: true,
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+      }).showToast();
+    }, 2000);
+  } catch (error) {
+    console.log("Error", error.message);
   }
-  setTimeout(() => {
-    Toastify({
-      text: `Wellcome ${name}`,
-      duration: 3000,
-      newWindow: true,
-      close: true,
-      gravity: "top",
-      position: "center",
-      stopOnFocus: true,
-      style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
-      },
-    }).showToast();
-  }, 2000);
 }
+// var ViewRow = document.getElementById("ViewRow");
+// var product_view = document.getElementById("product_view");
+// function ShowViewProduct(ele) {
+//   product_view.style.display = "flex";
+//   var CloseIcon = document.createElement("div");
+//   CloseIcon.innerHTML = `<i class="fa fa-solid fa-xmark" aria-hidden="true"></i>`;
+//   CloseIcon.classList.add("close-icon");
+//   CloseIcon.setAttribute("onclick", "hidePreview()");
+//   ViewRow.appendChild(CloseIcon);
+//   var left = document.createElement("div");
+//   var right = document.createElement("div");
+//   left.classList.add("col-lg-6", "col-sm-1");
+//   right.classList.add("col-lg-6", "col-sm-1");
+//   var imgDiv = document.createElement("div");
+//   imgDiv.innerHTML = `
+//   <img src="${ele.children[0].firstElementChild.firstElementChild.src}" alt="Product Image" class="img-fluid image-set">
+//   `;
+//   var descDiv = document.createElement("div");
+//   descDiv.classList.add("viewpera");
+//   descDiv.innerHTML =
+//     ele.children[0].lastElementChild.firstElementChild.innerHTML;
+//   var PriceDiv = document.createElement("div");
+//   PriceDiv.classList.add("pricediv");
+//   PriceDiv.innerHTML =
+//     ele.children[0].lastElementChild.firstElementChild.nextElementSibling.innerHTML;
+//   var CutDiv = document.createElement("div");
+//   CutDiv.classList.add("cutdiv");
+//   CutDiv.innerHTML =
+//     `<span class="fs-6 fw-bold">Diccount Price</span>` +
+//     " " +
+//     ele.children[0].lastElementChild.lastElementChild.innerHTML.trim();
+//   // CutDiv.lastElementChild.style.textDecoration = "line-through";
+//   console.log(CutDiv.firstElementChild.nextElementSibling);
+//   left.appendChild(imgDiv);
+//   right.appendChild(PriceDiv);
+//   right.appendChild(descDiv);
+//   right.appendChild(CutDiv);
+//   ViewRow.appendChild(left);
+//   ViewRow.appendChild(right);
+// }
+
+// function hidePreview() {
+//   product_view.style.display = "none";
+//   if (ViewRow.firstElementChild) {
+//     ViewRow.innerHTML = "";
+//   }
+// }

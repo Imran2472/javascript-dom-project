@@ -22,7 +22,7 @@
     <main>
         <header style="background-color: #F85606; padding: 0 12px 20px 12px;"
             class="d-flex flex-lg-column justify-lg-content-end align-lg-content-end">
-            <nav class="navbar navbar-expand-lg text-white d-flex" style="width: 100%;">
+            <nav class="navbar navbar-expand-lg text-white d-flex" style="width: 100%;" id="nav">
                 <div class="container-fluid flex-lg-column d-flex align-content-center">
                     <ul
                         class="navbar-nav me-auto mb-2 mb-lg-0 navlist text-end justify-content-end d-none align-items-end w-100 d-lg-flex">
@@ -196,7 +196,7 @@
 
                                 <div class="mb-3 input-filed form-check creat_porget d-flex flex-column gap-1 p-0">
                                     <div class="creat" id="creat" onclick="ShowCreaTAccount()">creat an account</div>
-                                    <div class="creat password_for">forget Password</div>
+                                    <a class="creat password_for" href="./Product.html">forget Password</a>
                                 </div>
                                 <button type="submit" class="btn btn-success" onclick="Login()">log in</button>
                             </div>
@@ -245,6 +245,18 @@
                 </div>
             </section>
         </section>
+
+        <!-- <section id="product_view">
+            <h1 class="fs-1 fw-bold">
+                Product Details
+            </h1>
+            <div class="row" id="ViewRow">
+
+            </div>
+        </section> -->
+
+
+
     </main>
 </body>
 <script src="app.js"></script>
