@@ -134,7 +134,6 @@ function CreateProductCards() {
 
 CreateProductCards();
 function ShowViewProduct(ProductId) {
-  console.log(ProductId);
   var ViewData = products1.filter((data) => data.id === ProductId);
   localStorage.setItem("product1", JSON.stringify(ViewData));
   window.location.href = "./ProductView.html";
@@ -338,6 +337,7 @@ CategoryShow();
 
 var product = [
   {
+    id: 1,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/d08aea77ac60661fc59a5030da74c4e0.jpg_720x720q80.jpg_.webp",
     desc: "7 in 1 Smart Watch - 7 Straps Smart watch Ultra watch 8 for Gift - 7in1 Smart watch for Boys - 7 in 1 Ultra Smart watch for Girls - Ultra 7 in 1 strap - Smart watch with 7 straps - Smart watch 7 in 1 - Ultra Smart watch 7 straps - Smartwatch Ultra 8 watch",
@@ -345,6 +345,7 @@ var product = [
     rating: "472",
   },
   {
+    id: 2,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/91c3e0893d1e1fba9935b8d50dcc91fa.jpg_720x720q80.jpg_.webp",
     desc: "FLK SPOT Mens Excercise Running Sneakers Casual shoes Fashion Breathable Fast shoes Training sneakers for Men Tennis Trending sneakers for walking gym",
@@ -352,6 +353,7 @@ var product = [
     rating: "372",
   },
   {
+    id: 3,
     image:
       "	https://img.drz.lazcdn.com/static/pk/p/f6ef83bad531a7f6a2103a30924facf5.jpg_720x720q80.jpg_.webp",
     desc: "Pack of 12 Lipsticks Casual Lipsticks Fashion Breathable Fast Lipsticks Training sneakers for Men Tennis Trending sneakers for walking gym",
@@ -359,6 +361,7 @@ var product = [
     rating: "172",
   },
   {
+    id: 4,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/37f53c981604471c4722fbead29541be.jpg_720x720q80.jpg_.webp",
     desc: "Bathroom Shelf Shampoo Storage Rack Bath Hanging Basket Iron Cosmetic Holder Punch-Free Kitchen Seasoning Organizer Accessories Bathroom Shelf Shampoo Storage Rack Bath Hanging Basket Iron Cosmetic Holder Punch-Free Kitchen Seasoning Organizer Accessories",
@@ -366,6 +369,7 @@ var product = [
     rating: "972",
   },
   {
+    id: 5,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/d30f213f937b362edd73dfee697d4f71.jpg_720x720q80.jpg_.webp",
     desc: "Enacolor Ultralight Eyeglasses Women's Pure School Style Student Large Frame Flat Lens Anti-blue Light Frame Glasses Ins Gilr New Accessories",
@@ -373,6 +377,7 @@ var product = [
     rating: "672",
   },
   {
+    id: 6,
     image:
       "	https://img.drz.lazcdn.com/static/pk/p/6909158cf456524509a8d4ed245878d0.jpg_720x720q80.jpg_.webp",
     desc: "Jenpharm - Anagrow Anti Hair Loss Shampoo 100ml",
@@ -380,6 +385,7 @@ var product = [
     rating: "232",
   },
   {
+    id: 7,
     image:
       "	https://img.drz.lazcdn.com/g/kf/S0fbaf9b24eb14207b3e6eaf660d7ed71m.jpg_720x720q80.jpg_.webp",
     desc: "Airpods Air Pro 3rd Gen TWS Bluetooth Earbuds / Earphones Super Sounds Bas And No Delay With Charging Case High Quality touch sensor True Stereo Headphones Connect with all devices",
@@ -387,6 +393,7 @@ var product = [
     rating: "532",
   },
   {
+    id: 8,
     image:
       "	https://img.drz.lazcdn.com/static/pk/p/cf6eda842d7177bc3b0c81b2fd6d0e0f.jpg_720x720q80.jpg_.webp",
     desc: "Marble Sheet - Marble Sheet Sticker - 60cm x 100cm/200Cm Marble Sheet Texture Design PVC Waterproof Self adhesive Wallpaper Sticker sheet Furniture New Skin Kitchen Cabinet Paper Stickers sheet Oilproof Table top Sticker sheet",
@@ -394,6 +401,7 @@ var product = [
     rating: "412",
   },
   {
+    id: 9,
     image:
       "	https://img.drz.lazcdn.com/static/pk/p/d585babf3804b92b49e74ba1546e4e0a.jpg_120x120q80.jpg_.webp",
     desc: "Air Humidifier - Diffuser for Air Freshener / Aromatherapy - USB Desktop Fogger - Mist Maker Sprayer with Led Colorful Light - Silent Portable Humidifier for Room / Car / Offices / Double Nozzle Humidifier / Mini Humidifier",
@@ -401,6 +409,7 @@ var product = [
     rating: "362",
   },
   {
+    id: 10,
     image:
       "	https://img.drz.lazcdn.com/static/pk/p/40a7950f27ac3e877ac901d1585aed18.jpg_720x720q80.jpg_.webp",
     desc: "Magnetic Broken Heart Love Bracelet for Men and Women - 2pcs/Set Pair of Cuba Style Magnetic Chain Bracelet for Couples - Bracelet for Couples",
@@ -408,6 +417,7 @@ var product = [
     rating: "262",
   },
   {
+    id: 11,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/2fde336deabc6682412779dc7a46deb9.png_720x720q80.png_.webp",
     desc: "2Pcs Motion Activated Glow Bike Flashlight Car Motorcycle Cycle Tire Valve Caps Wheel Light Amazing Fantastic Bicycle Accessory LEDs",
@@ -415,6 +425,7 @@ var product = [
     rating: "112",
   },
   {
+    id: 12,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/946ca717c1a72779c46d5abafb413882.jpg_720x720q80.jpg_.webp",
     desc: "Packof 9 Clothes Storage Bag, Foldable Blanket Quilts Bag, Eco Friendly Bamboo Non-Woven Fabric",
@@ -422,6 +433,7 @@ var product = [
     rating: "182",
   },
   {
+    id: 13,
     image:
       "	https://img.drz.lazcdn.com/static/pk/p/616ccff3a8e805596f66653292e25944.jpg_720x720q80.jpg_.webp",
     desc: "New Professional Vintage T-Shaped Blade T9 Direct Charging Dragon Style Hair Clippers for Men , Zero Gapped, Lines, Edges, Sideburns, Beard Trimmer for Men, Grooming Kit Low Noise ,USB Rechargeable with Guide Combs",
@@ -429,6 +441,7 @@ var product = [
     rating: "12",
   },
   {
+    id: 14,
     image:
       "	https://img.drz.lazcdn.com/static/pk/p/24a1dbee1db7fe26f6cf38a5deecc420.jpg_720x720q80.jpg_.webp",
     desc: "Garena Free Fire Diamonds 13",
@@ -436,6 +449,7 @@ var product = [
     rating: "172",
   },
   {
+    id: 15,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/3b2039be3f12cabb8150482b4b154eb7.jpg_720x720q80.jpg_.webp",
     desc: "Black The boys printed summer tracksuit for men round neck half sleeves tshirt&trouser for men& boys best article of summer collection - T shirt for Men - Trouser for Men",
@@ -443,6 +457,7 @@ var product = [
     rating: "192",
   },
   {
+    id: 16,
     image:
       "	https://img.drz.lazcdn.com/static/pk/p/e5670492b228479d646783f08f49715a.jpg_720x720q80.jpg_.webp",
     desc: "CCTV - 1080P Full HD CCTV Camera -CCTV Camera Wifi - Wifi Smart Camera - Wifi Camera -Home Security Camera - Smart Camera Wifi - CCTV Wifi - Wifi Camera Blub Socket - Security Camera For Home Wifi - Camera CCTV - Security Camera - Security Camera For Home",
@@ -450,6 +465,7 @@ var product = [
     rating: "342",
   },
   {
+    id: 17,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/9ac80adbf1bb288e8e447101ace45c59.jpg_720x720q80.jpg_.webp",
     desc: "Microfiber Cloth For Scratch-Free Cleaning - 300 GSM - 20*40",
@@ -457,6 +473,7 @@ var product = [
     rating: "442",
   },
   {
+    id: 18,
     image:
       "	https://img.drz.lazcdn.com/g/kf/Sb29b42034f8b4f3da531086e4200641bW.jpg_720x720q80.jpg_.webp",
     desc: "Retro Sunglasses Men Brand Designer Fashion Rimless Sun Glasses Shades Cutting Lens Ladies Frameless Eyeglasses",
@@ -464,6 +481,7 @@ var product = [
     rating: "542",
   },
   {
+    id: 19,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/bdfc091f1facd0ba7b607d9112c494fb.jpg_720x720q80.jpg_.webp",
     desc: "F3 Mobile Screen Magnifier 3D Enlarged Screen Display Mobile Stand High Quality",
@@ -471,6 +489,7 @@ var product = [
     rating: "242",
   },
   {
+    id: 20,
     image:
       "https://img.drz.lazcdn.com/g/kf/S8dc1452bcdf346159b5bef8b3d054320j.jpg_720x720q80.jpg_.webp",
     desc: "BT8 Wireless Bluetooth Earphones Headphones Outdoor Sports Headset 5.3 With Charging Bin Display Touch Control Earbuds for Muisc",
@@ -478,6 +497,7 @@ var product = [
     rating: "262",
   },
   {
+    id: 21,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/4ec8c573c971d912dda6745d2b972729.jpg_720x720q80.jpg_.webp",
     desc: "Perfumed Body Spray Big Boss - 200ML Perfumed Body Spray Outdoor Sports Headset 5.3 With Perfumed Body Spray Bin Display Touch Control Earbuds for Muisc",
@@ -485,6 +505,7 @@ var product = [
     rating: "282",
   },
   {
+    id: 22,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/98ca796a76bb855a71778d0edfa1814d.jpg_720x720q80.jpg_.webp",
     desc: "Men's Winter Collection 2 piece track suit",
@@ -492,12 +513,14 @@ var product = [
     rating: "582",
   },
   {
+    id: 23,
     image: "https://video-play.daraz.pk/cover/3554094.jpg",
     desc: "Face Value Counter 10KG To 60KG Weight Adjustable Professional Counter Hand Gripper for Men & Women | Counter Hand Grip|Finger Exerciser|Power Gripper",
     price: "Rs. 390 -61%",
     rating: "432",
   },
   {
+    id: 24,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/0b242f3d3b74d97059f8cb41eba26b78.jpg_720x720q80.jpg_.webp",
     desc: "12 Color Super Light Clay Air Dry Polymer Modelling Clay With 3 Tools, Kids Art Crafts Best Gift, clay for kids",
@@ -505,6 +528,7 @@ var product = [
     rating: "132",
   },
   {
+    id: 25,
     image:
       "	https://img.drz.lazcdn.com/g/kf/S343578ee0a044f229fc4e11c1373f5412.jpg_720x720q80.jpg_.webp",
     desc: "Camelo leather sandals,Men’s casual sandals,Fashion Comfort &Stylish sandals",
@@ -512,6 +536,7 @@ var product = [
     rating: "132",
   },
   {
+    id: 26,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/2033a1aaf077efe4c1c008fbf639ae92.jpg_720x720q80.jpg_.webp",
     desc: "Beeswax Furniture Polish ,Wood Seasoning Beeswax | Natural Wood Wax Traditional Beeswax Polish for Wood & Furniture | Beeswax Wood Polish and Cleaner for Furniture Care",
@@ -519,6 +544,7 @@ var product = [
     rating: "22",
   },
   {
+    id: 27,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/34a4fcd5146be0d87e184af99648e023.jpg_720x720q80.jpg_.webp",
     desc: "Ocean silicone Band Strap for Smart Watch Ultra 8 7 6 5 4 SE 45mm 49mm 44mm 42mm",
@@ -526,6 +552,7 @@ var product = [
     rating: "92",
   },
   {
+    id: 28,
     image:
       "https://img.drz.lazcdn.com/g/kf/Se59f9e54899449e2bd71b90f709c5169C.jpg_720x720q80.jpg_.webp",
     desc: "Customize Rings With box Customize your name on Rings",
@@ -533,6 +560,7 @@ var product = [
     rating: "72",
   },
   {
+    id: 29,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/0acfb18df45a376c86cc1f1a0c198143.jpg_720x720q80.jpg_.webp",
     desc: "100% Pure Double Shaded TOP Quality BAG for Laptop University college school Laptop Backpack B210, 16-Inch Laptop/Tablet , Durable, Water-Repellent, Lightweight, Clean Design, Sleek for Travel, Business Casual or College,",
@@ -540,6 +568,7 @@ var product = [
     rating: "72",
   },
   {
+    id: 30,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/f7e09e260e2a84372c53eaafb28ac88b.jpg_720x720q80.jpg_.webp",
     desc: "AKG Handsfree - Universal AKG Handfree For All Android Devices Having 3.5mm Headphone Jack - Tuned By Samsung - PUBG AKG Earphone - Handfree For Music - EO-IG955 - Black Color",
@@ -547,6 +576,7 @@ var product = [
     rating: "272",
   },
   {
+    id: 31,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/f46982f55b59ebcb41e642f5e36b8d36.jpg_720x720q80.jpg_.webp",
     desc: "Winter Track Suit Hoodie and Trouser Full tracksuit for Men'sr",
@@ -554,6 +584,7 @@ var product = [
     rating: "292",
   },
   {
+    id: 32,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/d8e7e8e9ecd00f261c9e1b5e1def4d04.jpg_720x720q80.jpg_.webp",
     desc: "SUNISA 6 PCS Matte Liquid Peel Off Nail Polish",
@@ -561,6 +592,7 @@ var product = [
     rating: "492",
   },
   {
+    id: 33,
     image:
       "	https://img.drz.lazcdn.com/static/pk/p/b24ff2c164732f5189e4adc277ee8d16.jpg_720x720q80.jpg_.webp",
     desc: "Two layer Jewelry organizer Box (Imported) - Women Display Storage Case Large PU Leather Jewelry Holder with Lock for Earring Ring Necklace Bracelet",
@@ -568,6 +600,7 @@ var product = [
     rating: "492",
   },
   {
+    id: 34,
     image:
       "https://img.drz.lazcdn.com/static/pk/p/77631a3df33a24737d53cfaa91443f34.jpg_720x720q80.jpg_.webp",
     desc: "Two layer Jewelry organizer Box (Imported) - Women Display Storage Case Large PU Leather Jewelry Holder with Lock for Earring Ring Necklace Bracelet",
@@ -585,6 +618,7 @@ function ProducrShowHomePage() {
     var CardToShow = product.slice(StartIndex, StartIndex + minimumIndex);
     CardToShow.forEach((data) => {
       var product_col = document.createElement("div");
+      product_col.setAttribute("onclick", `ShowViewProduct1(${data.id})`);
       product_col.className = "col-lg-2 col-md-3 col-sm-4 p-1";
       product_col.innerHTML = `
     <div class="card-content2 border rounded-1">
@@ -648,6 +682,82 @@ function ProducrShowHomePage() {
   }
 }
 ProducrShowHomePage();
+function ShowViewProduct1(id) {
+  try {
+    var ViewData1 = product.filter((data) => data.id === id);
+    console.log(ViewData1);
+    localStorage.setItem("product", JSON.stringify(ViewData1));
+    window.location.href = "./ProductView.html";
+    GetSingleProduct();
+  } catch (error) {
+    console.log("Error", error.message);
+  }
+}
+function GetSingleProduct() {
+  try {
+    var Data = JSON.parse(localStorage.getItem("product"));
+    var Leftdiv = document.createElement("div");
+    Leftdiv.classList.add("left-imgs", "col-lg-6", "col-md-12");
+    Leftdiv.innerHTML = `
+   <div class="left-imgs">
+    <img class="main-img" alt="product image" src="${Data[0].image}" />
+    </div>
+  `;
+    var rightdiv = document.createElement("div");
+    rightdiv.classList.add("right-text", "col-lg-6", "col-md-12");
+    rightdiv.innerHTML = `
+                  <div class="right-text">
+                    <span class="heading-secondary">Daraz Company</span>
+                    <h1 class="heading-primary">${
+                      Data[0].title ? Data[0].title : "Not Title Here...."
+                    }</h1>
+                    <p class="description">
+                      ${Data[0].desc}
+                    </p>
+
+                    <h2 class="price-discount">${Data[0].rating}</h2>
+                    <h2 class="price-discount">${Data[0].price}</h2>
+
+                    <p class="price-original">${Data[0].price}</p>
+                    <div class="buttons">
+                        <div class="btn-left">
+                            <button class="minus" onclick="Counterminus()">
+                                <svg width="12" height="4" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <path
+                                            d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
+                                            id="a" />
+                                    </defs>
+                                    <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
+                                </svg>
+                            </button>
+                            <span class="cart-number">${Counter}</span>
+                            <button class="plus" onclick="CounterPlus()">
+                                <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                        <path
+                                            d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
+                                            id="b" />
+                                    </defs>
+                                    <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="btn-right">
+                            <ion-icon name="cart-outline"></ion-icon>
+                            <button class="add-cart">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+  `;
+    product_container.appendChild(Leftdiv);
+    product_container.appendChild(rightdiv);
+  } catch (error) {
+    console.log("Error", error.message);
+  }
+}
 
 try {
   button.addEventListener("click", function () {
