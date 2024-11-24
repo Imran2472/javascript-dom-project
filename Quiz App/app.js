@@ -15,6 +15,7 @@ var EmailShow = document.querySelector("#email-show");
 var RollShow = document.querySelector("#roll-show");
 var instituteShow = document.querySelector("#institute-show");
 var submitBtn = document.querySelector(".nextbtn");
+var submitBtnBack = document.querySelector("#submitBtnBack");
 var ProgressStart = 0;
 var PrgressEndVal = 0;
 var Speed = 50;
@@ -26,7 +27,19 @@ function GetValues() {
   var rollNumValue = rollNum.value;
   var instituteValue = institute.value;
   if (!NameValue || !EmailValue || !rollNumValue || !instituteValue) {
-    alert("Please fill in all the fields");
+    
+    Toastify({
+      text: "Please fill in all the fields",
+      duration: 3000,
+      newWindow: true,
+      close: true,
+      gravity: "top", 
+      position: "center",
+      stopOnFocus: true, 
+      style: {
+        background: "linear-gradient(to right, #ee7752,#e73c7e)",
+      },
+    }).showToast();
     return;
   }
   personal_details.classList.add("hidden");
@@ -258,6 +271,10 @@ function RestartQuiz() {
 }
 var check = true;
 function CheckAnswer(ele) {
+  if(questions.length > 1){
+    submitBtnBack.classList.remove("pointer-events-none","bg-blue-200")
+    submitBtnBack.classList.add("bg-blue-500")
+  }
   var CheckAnswer = ele.textContent == questions[currentQuestion].answer;
   if (CheckAnswer) {
     Score++;
@@ -269,6 +286,8 @@ function CheckAnswer(ele) {
       "hover:bg-green-200"
     );
     ele.setAttribute("data-answer", "correct");
+    submitBtn.classList.add("bg-blue-500")
+    submitBtn.classList.remove("pointer-events-none")
     options.forEach((data) => {
       data.classList.add("pointer-event-none");
     });
@@ -280,16 +299,17 @@ function CheckAnswer(ele) {
       "hover:bg-red-200"
     );
     ele.setAttribute("data-answer", "wrong");
+    submitBtn.classList.add("bg-blue-500")
+    submitBtn.classList.remove("pointer-events-none")
     options.forEach((data) => {
       data.classList.add("pointer-event-none");
-      if(data.innerHTML == questions[currentQuestion].answer){
+      if (data.innerHTML == questions[currentQuestion].answer) {
         data.classList.add(
           "bg-green-200",
           "border",
           "border-green-400",
           "hover:bg-green-200"
         );
-        
       }
     });
   }
@@ -331,10 +351,121 @@ function GetAnswer() {
       }
     }, Speed);
 
-    return;
+
+  const canvas = document.getElementById('fireworksCanvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let fireworks = [];
+
+function Firework(x, y) {
+    this.x = x;
+    this.y = y;
+    this.size = Math.random() * 3 + 1;
+    this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    this.exploded = false;
+    this.particles = [];
+
+    this.update = function() {
+        if (!this.exploded) {
+            this.y -= 5; // Move upwards
+            if (this.y < canvas.height / 2) {
+                this.explode();
+            }
+        } else {
+            for (let i = 0; i < this.particles.length; i++) {
+                this.particles[i].update();
+            }
+        }
+    };
+
+    this.explode = function() {
+        this.exploded = true;
+        const particleCount = 100;
+        for (let i = 0; i < particleCount; i++) {
+            this.particles.push(new Particle(this.x, this.y, this.color));
+        }
+    };
+
+    this.draw = function() {
+        if (!this.exploded) {
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        } else {
+            for (let i = 0; i < this.particles.length; i++) {
+                this.particles[i].draw();
+            }
+        }
+    };
+}
+
+function Particle(x, y, color) {
+  this.x = x;
+  this.y = y;
+  this.size = Math.random() * 2 + 1;
+  this.color = color;
+  this.speed = Math.random() * 10 + 2;
+  console.log(this.speed)
+  this.angle = Math.random() * Math.PI * 2;
+  this.life = 500
+
+    this.update = function() {
+        this.x += Math.cos(this.angle) * this.speed;
+        this.y += Math.sin(this.angle) * this.speed;
+        this.life--;
+    };
+
+    this.draw = function() {
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    };
+}
+
+function createFirework() {
+    const x = Math.random() * canvas.width;
+    const y = canvas.height;
+    fireworks.push(new Firework(x, y));
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < fireworks.length; i++) {
+        fireworks[i].update();
+        fireworks[i].draw();
+        if (fireworks[i].exploded && fireworks[i].particles.every(p => p.life <= 0)) {
+            fireworks.splice(i, 1);
+            i--;
+        }
+    }
+    requestAnimationFrame(animate);
+}
+
+
+function userWins() {
+    for (let i = 0; i < 10; i++) {
+        createFirework();
+    }
+}
+
+
+userWins();
+animate();
+
+
+setTimeout(() => {
+    fireworks = [];
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}, 300000); 
   }
   RenderQuestion();
-  return;
+  submitBtn.classList.remove("bg-blue-500")
+  submitBtn.classList.add("pointer-events-none")
 }
 
 function BackButtonfun() {
