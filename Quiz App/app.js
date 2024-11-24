@@ -123,11 +123,11 @@ var questions = [
 
   {
     question: "Which property is used to change the background color in CSS?",
-    option1: "A. bgcolor",
+    option1: "A. Both B and D",
     option2: "B. background-color",
     option3: "C. color",
     option4: "D. background",
-    answer: "B. Both A and B",
+    answer: "A. Both B and D",
   },
   {
     question: "How do you select an element with the id 'header' in CSS?",
@@ -282,6 +282,15 @@ function CheckAnswer(ele) {
     ele.setAttribute("data-answer", "wrong");
     options.forEach((data) => {
       data.classList.add("pointer-event-none");
+      if(data.innerHTML == questions[currentQuestion].answer){
+        data.classList.add(
+          "bg-green-200",
+          "border",
+          "border-green-400",
+          "hover:bg-green-200"
+        );
+        
+      }
     });
   }
 }
