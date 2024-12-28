@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>
+      Calculator With TypeScript | TypeScript Calculator: Math Made Easy
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="w-[100%] h-[100vh] flex justify-center items-center bg-[#E0E3EB] px-[14px]"
+    >
+      <div
+        class="w-[320px] max-[400px]:w-[100%] px-[10px] border shadow-2xl rounded-2xl bg-gray-400 px-[1rem] py-[2rem] border-2 border-gray-800"
+      >
+        <div class="px-[6px]">
+          <input
+            type="text"
+            class="w-[100%] py-[30px] px-[20px] font-semibold text-[15px] outline-none text-[2rem] text-end bg-gray-800 text-white rounded-lg mb-4"
+            readonly="true"
+            id="input"
+            placeholder="0"
+          />
+        </div>
+        <div class="body px-[6px] grid grid-cols-4 gap-3">
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            AC
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            DEL
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            %
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            /
+          </button>
+          <!-- next line start here...  -->
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            7
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            8
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            9
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            *
+          </button>
+          <!-- next line start here...  -->
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            4
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            5
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            6
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            -
+          </button>
+          <!-- next line start here...  -->
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            1
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            2
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            3
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            +
+          </button>
+          <!-- next line start here...  -->
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            0
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            00
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            .
+          </button>
+          <button
+            class="bg-gray-800 text-white py-[10px] rounded-lg text-[18px] btn-calculate hover:bg-blue-500 hover:text-white"
+          >
+            =
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
