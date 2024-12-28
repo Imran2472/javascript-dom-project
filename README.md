@@ -4,6 +4,10 @@
     
   </head>
   <body>
+    <h4>TypeScript Calculator App</h4>
+    <p>
+     https://imran-typescript-calculator-app.netlify.app
+    </p>
     <h4>JavaScript Quiz App</h4>
     <p>
      https://imran-quiz-app.netlify.app
