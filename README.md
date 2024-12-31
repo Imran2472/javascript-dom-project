@@ -8,6 +8,10 @@
     <p>
      https://imran-typescript-calculator-app.netlify.app
     </p>
+    <h4>supa base login and signup project App</h4>
+    <p>
+    https://imran-supa-base-app.netlify.app/
+    </p>
     <h4>JavaScript Quiz App</h4>
     <p>
      https://imran-quiz-app.netlify.app
