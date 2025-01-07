@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  background: -19vw -50vh url(./images/bg-pattern-top.svg) no-repeat,
+    50vw 50vh url(./images/bg-pattern-bottom.svg) no-repeat, hsl(185, 75%, 39%);
+  font-family: "Open Sans", serif;
+}

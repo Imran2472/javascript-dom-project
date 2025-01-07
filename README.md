@@ -4,6 +4,10 @@
     
   </head>
   <body>
+    <h4>Todos App with Supa base</h4>
+    <p>
+     https://imran-supabase-todos-app.netlify.app
+    </p>
     <h4>TypeScript Calculator App</h4>
     <p>
      https://imran-typescript-calculator-app.netlify.app

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="w-[100%] h-[100vh] flex justify-center items-center px-[10px]">
+      <div
+        class="todo-container max-[1300px]:w-[500px] max-[400px]:w-[100%] bg-white p-7 rounded-xl max-[1600px]:w-[50%]"
+      >
+        <h1
+          class="text-[25px] font-semibold text-gray-800 cursor-pointer mb-2 flex items-center gap-2"
+        >
+          To-do <span class="text-[#19A2AE]"> List App</span>
+          <img
+            src="images/todo.png"
+            alt=""
+            class="w-[70px] h-[70px] object-contains"
+          />
+        </h1>
+        <div class="flex justify-between">
+          <input
+            type="text"
+            id="taskInput"
+            class="w-full px-5 py-3 rounded-xl border w-[100%] focus:outline-1"
+            placeholder="Add a task..."
+          />
+          <button
+            id="addTaskButton"
+            class="ml-3 px-[1rem] py-[5px] rounded-xl text-white bg-[#19A2AE] hover:bg-[#138595] text-base text-nowrap"
+          >
+            Add Task
+          </button>
+        </div>
+        <ul class="mt-5 todo-ul"></ul>
+      </div>
+    </div>
+    <div id="popup" class="hidden fixed top-0 left-0 right-0 bottom-0"></div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="app.js"></script>
+</html>
